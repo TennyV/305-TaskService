@@ -1,0 +1,57 @@
+import java.util.ArrayList;
+
+
+public class TaskService {
+    private List<Task> taskServiceList = new ArrayList<> ();
+
+    private void addTask(Task taskServiceList) {
+        taskServiceList.getClass ();
+    }
+
+    private void deleteTask(String taskID) {
+        if (taskServiceList.contains (null)) {
+            throw new IllegalArgumentException ("Illegal action");
+        }
+        for (Task task : taskServiceList) {
+            if (taskServiceList.contains (taskID))
+                taskServiceList.remove (task);
+        }
+        showTaskList ();
+    }
+
+    private void updateTaskByTaskID(String taskID) {
+        for(Task task: taskServiceList) {
+            if(task.getTaskID().equals (taskID)) {
+                System.out.print ("Update your tasks");
+                taskServiceList.remove (task);
+                Task task1 = new Task ("8675309", "Homework assignment", "Finish your homework");
+
+                if (task.equals (null))
+                {
+                    throw new IllegalArgumentException ("Invalid update");
+                }
+            }
+        }
+    }
+
+    private void showTaskList() {
+        for (Task task : taskServiceList) {
+            System.out.print (task.getTaskID () + "" + task.getTaskName ());
+        }
+    }
+        public static void main(String[] args) {
+            TaskService task = new TaskService ();
+            Task task1 = new Task ("888777666","Write JUnit tests","Do a good job");
+            Task task2 = new Task ("555777666", "Next Phase", "Software developing is cool");
+            task.addTask (task1);
+            task.addTask (task2);
+            task.showTaskList ();
+            task.deleteTask ("888777666");
+            task.updateTaskByTaskID ("555777666");
+        }
+
+
+    }
+
+
+
