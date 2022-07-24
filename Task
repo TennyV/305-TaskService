@@ -1,0 +1,49 @@
+package main.java;
+
+public class Task {
+
+
+    String taskID;
+    String taskName;
+    String field;
+
+    public Task(String taskID, String taskName, String field) {
+
+        if(taskID.equals(null) || taskID.length () > 10) {
+            throw new IllegalArgumentException ("Invalid taskID");
+        }
+        if(taskName.equals (null)|| taskName.length ()>20) {
+            throw new IllegalArgumentException("Invalid task name");
+        }
+        if(field.equals (null)||field.length ()>50) {
+            throw new IllegalArgumentException("Field length exceeded");
+        }
+        this.taskID = taskID;
+        this.taskName = taskName;
+        this.field = field;
+    }
+
+    public String getTaskID() {
+        return taskID;
+    }
+
+    public void setTaskID(String taskID) {
+        this.taskID = taskID;
+    }
+
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
+
+    public String getField() {
+        return field;
+    }
+
+    public void setField(String field) {
+        this.field = field;
+    }
+}
